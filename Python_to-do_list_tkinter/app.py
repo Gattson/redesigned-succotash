@@ -48,9 +48,7 @@ class todo:
 
         with open('data.txt', 'r') as file:
             read = file.read()
-            print(f"Read List: {read}")
             for item in read.split("\n"):
-                print(f"i: {item}")
                 self.main_text.insert(END, item)
             file.close()
 
