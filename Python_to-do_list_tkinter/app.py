@@ -47,10 +47,11 @@ class todo:
             self.main_text.delete(delete1)
 
         with open('data.txt', 'r') as file:
-            read = file.readline()
-            for i in read:
-                ready = i.split()
-                self.main_text.insert(END, ready)
+            read = file.read()
+            print(f"Read List: {read}")
+            for item in read.split("\n"):
+                print(f"i: {item}")
+                self.main_text.insert(END, item)
             file.close()
 
         self.button = Button(self.root, text='Add', font='sarif, 20 bold italic', width=10, bg='#7774db',  fg='black', command=add)
